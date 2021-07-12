@@ -58,6 +58,7 @@ function setup() {
 
 
 
+
   //create 1st row of plinko objects
   for (var j = 75; j <=width; j=j+50) { 
     plinkos.push(new Plinko(j,75));
@@ -100,17 +101,18 @@ function draw() {
     divisions[k].display();
   }
 
-  if(frameCount%60 === 0){
-    for (var j = 0; j < 10; j=j++){
-      particles.push(new Particle(random(width / 2 - 10, width / 2 + 10), 10, 10));
-    }
+  
+
+
+
+  if(frameCount%60===0){
+    particles.push(new Particle(random(width/2-30, width/2+30), 10,10));
+    score++;
   }
 
-
-
-  //display the particles
-  for(var gg = 0; gg < particles.length; gg++){
-   particles[gg].display();
+ for (var j = 0; j < particles.length; j++) {
+  
+    particles[j].display();
   }
 
 
